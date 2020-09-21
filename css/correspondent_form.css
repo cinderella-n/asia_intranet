@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contrainer-fluid {
+    background-color: #f00;
+    color: #fff;
+    font-size: 15px;
+}
+
+.row>.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12 {
+    margin: 0px auto;
+}
+
+h1 {
+    margin: 0px auto;
+    text-align: center;
+}
+
+input[type=text] {
+    width: 500px;
+    color: #000;
+}
+
+input[type=number] {
+    width: 150px;
+    color: #000;
+}
