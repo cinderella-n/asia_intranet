@@ -11,7 +11,7 @@
 		$str_condition = "AND ap_pattern_name1 LIKE '%" . $str_kw . "%' OR ap_pattern_code like '%"  . $str_kw . "%'";
 	}
   
-    $sql = "SELECT * FROM `ap_pattern_tb` WHERE `ap_pattern_status`<>'5' " . $str_condition;
+    $sql = "SELECT * FROM `ap_pattern_tb` WHERE `ap_pattern_status`<>'0' " . $str_condition;
     $result = $conn->query($sql);
 ?>
 
