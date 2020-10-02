@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.contrainer-fluid {
+.container-fluid {
     background-color: #f00;
     color: #fff;
     font-size: 15px;
@@ -35,7 +35,16 @@ input[type=text] {
     color: #000;
 }
 
+select {
+    width: 500px;
+    color: #000;
+}
+
 input[type=number] {
     width: 150px;
     color: #000;
+}
+
+input[type=submit] {
+    margin: 5px;
 }
