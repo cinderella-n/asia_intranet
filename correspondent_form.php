@@ -10,18 +10,6 @@
     $sql_region = "SELECT * FROM `region_tb`";
     $result_region = $conn->query($sql_region);
 
-    $sql_ar_settlement_method = "SELECT * FROM `ar_settlement_method_tb`";
-    $result_ar_settlement_method = $conn->query($sql_ar_settlement_method);
-
-    $sql_ap_settlement_method = "SELECT * FROM `ap_settlement_method_tb`";
-    $result_ap_settlement_method = $conn->query($sql_ap_settlement_method);
-
-    $sql_ar_pattern = "SELECT * FROM `ar_pattern_tb`";
-    $result_ar_pattern = $conn->query($sql_ar_pattern);
-
-    $sql_ap_pattern = "SELECT * FROM `ap_pattern_tb`";
-    $result_ap_pattern = $conn->query($sql_ap_pattern);
-
     $sql_tax_sale_type = "SELECT * FROM `tax_sale_type_tb`";
     $result_tax_sale_type = $conn->query($sql_tax_sale_type);
 
@@ -41,7 +29,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/correspondent_form.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/global.css" />
 </head>
 <body>
     <div id="form" class="container-fluid">
@@ -186,12 +173,8 @@
                 <h3>AR settlement method code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ar_settlement_method" class="form-control" name="slt_ar_settlement_method">
-                    <?php while ($row_ar_settlement_method = $result_ar_settlement_method->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_ar_settlement_method['ar_settlement_method_code']?>" id="slt_ar_settlement_method" name="slt_ar_settlement_method"> <?=$row_ar_settlement_method['ar_settlement_method_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_ar_settlement_method" name="slt_ar_settlement_method" class="form-control">              
+                        <option value="0" >กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -200,12 +183,8 @@
                 <h3>AP settlement method code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ap_settlement_method" class="form-control" name="slt_ap_settlement_method">
-                    <?php while ($row_ap_settlement_method = $result_ap_settlement_method->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_ap_settlement_method['ap_settlement_method_code']?>" id="slt_ap_settlement_method" name="slt_ap_settlement_method"> <?=$row_ap_settlement_method['ap_settlement_method_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_ap_settlement_method" class="form-control" name="slt_ap_settlement_method">             
+                        <option value="0">กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -231,11 +210,7 @@
             </div>
             <div class="col-md-6">
                 <select id="slt_ar_pattern" class="form-control" name="slt_ar_pattern">
-                    <?php while ($row_ar_pattern = $result_ar_pattern->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_ar_pattern['ar_pattern_code']?>" id="slt_ar_pattern" name="slt_ar_pattern"> <?=$row_ar_pattern['ar_pattern_name1']?> </option>
-                    <?php }  ?>
+                        <option value="0">กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -244,12 +219,8 @@
                 <h3>AP pattern code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ap_pattern" class="form-control" name="slt_ap_pattern">
-                    <?php while ($row_ap_pattern = $result_ap_pattern->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_ap_pattern['ap_pattern_code']?>" id="slt_ap_pattern" name="slt_ap_pattern"> <?=$row_ap_pattern['ap_pattern_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_ap_pattern" class="form-control" name="slt_ap_pattern">              
+                        <option value="0">กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -351,6 +322,134 @@
         </div> 
         </form>
     </div>
-    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" >
+        $(function() {
+            var sendobj_ap_settlement_method = {};
+            sendobj_ap_settlement_method.get_ap_settlement_method = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_ap_settlement_method.php",
+                data: sendobj_ap_settlement_method,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_ap_settlement_method').append($('<option>', {
+                                value: data.list[i].ajax_ap_settlement_method_code,
+                                text: data.list[i].ajax_ap_settlement_method_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
+            var sendobj_ar_settlement_method = {};
+            sendobj_ar_settlement_method.get_ar_settlement_method = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_ar_settlement_method.php",
+                data: sendobj_ar_settlement_method,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_ar_settlement_method').append($('<option>', {
+                                value: data.list[i].ajax_ar_settlement_method_code,
+                                text: data.list[i].ajax_ar_settlement_method_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
+            var sendobj_ap_pattern = {};
+            sendobj_ap_pattern.get_ap_pattern = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_ap_pattern.php",
+                data: sendobj_ap_pattern,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_ap_pattern').append($('<option>', {
+                                value: data.list[i].ajax_ap_pattern_code,
+                                text: data.list[i].ajax_ap_pattern_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
+            var sendobj_ar_pattern = {};
+            sendobj_ar_pattern.get_ar_pattern = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_ar_pattern.php",
+                data: sendobj_ar_pattern,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_ar_pattern').append($('<option>', {
+                                value: data.list[i].ajax_ar_pattern_code,
+                                text: data.list[i].ajax_ar_pattern_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+            
+        });
+    </script>
 </body>
 </html>
