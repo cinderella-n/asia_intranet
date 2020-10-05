@@ -32,19 +32,16 @@ h1 {
 
 input[type=text] {
     color: #000;
-    font-size: 14px;
 }
 
 select {
     color: #000;
-    font-size: 14px;
 }
 
 input[type=number] {
     color: #000;
-    font-size: 14px;
 }
 
 input[type=submit] {
-    margin: 5px;
+    margin: 15px;
 }

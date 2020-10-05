@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/correspondent_form.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/global.css" />
+
 </head>
 <body>
     <div class="container-fluid">
@@ -22,294 +22,294 @@
             </div>
         </div>
         <form action="r_goods_form.php" method="post">
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Status</h3>
-            </div>
-            <div class="col-md-6">
-                <select id="slt_status" class="form-control" name="slt_status">            
-                    <option value="0">กรุณาเลือก...</option>
-                </select>                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Goods code</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="text" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Name1(ENg)</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="text" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Name2(TH)</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="text" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Goods type</h3>
-            </div>
-            <div class="col-md-6">
-                <div class="radio">
-                    <label><input type="radio" name="rdo_goods_type" value="1" checked>Merchandise</label>
-                    <label><input type="radio" name="rdo_goods_type" value="2" >Product</label>
-                    <label><input type="radio" name="rdo_goods_type" value="3" >Consumables</label>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Status</h3>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Currency(ForSales)</h3>
-            </div>
-            <div class="col-md-6">
-                <div class="radio">
-                    <label><input type="radio" name="rdo_currency_for_sale" value="1" checked>THB</label>
-                    <label><input type="radio" name="rdo_currency_for_sale" value="2" >USD</label>
-                    <label><input type="radio" name="rdo_currency_for_sale" value="3" >JP</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Stocking Unit</h3>
-            </div>
-            <div class="col-md-6">
-                <div class="radio">
-                    <label><input type="radio" name="rdo_stocking_unit" value="1" checked>Case</label>
-                    <label><input type="radio" name="rdo_stocking_unit" value="2" >DB</label>
-                    <label><input type="radio" name="rdo_stocking_unit" value="2" >PCS</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>PCS/DB</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="number" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>PCS/CASE</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="number" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>SalesUnitPrice(DB)</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="text" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>SalesUnitPrice(CASE)</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="text" name="txt">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Product Category Goods</h3>
-            </div>
-            <div class="col-md-6">
-                <select id="slt_product_category_goods" class="form-control" name="slt_product_category_goods">
-                    <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Tax type code (sales)</h3>
-            </div>
-            <div class="col-md-6">
-                <select id="slt_tax_sale_type" class="form-control" name="slt_tax_sale_type">
-                    <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Tax type code (purchase)</h3>
-            </div>
-            <div class="col-md-6">
-                <select id="slt_tax_purchase_type" class="form-control" name="slt_tax_purchase_type">
-                    <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Sales A/C code</h3>
-            </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
+                <div class="col-md-6">
+                    <select id="slt_goods_status" class="form-control" name="slt_goods_status" required>            
                         <option value="0">กรุณาเลือก...</option>
-                </select>  
+                    </select>                
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Sales return A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Goods code</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_code" class="form-control" type="text" name="txt_goods_code"  placeholder="กรุณากรอกรหัสสินค้า..." required>
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Name1(ENg)</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_name1" class="form-control" type="text" name="txt_goods_name1" placeholder="กรุณากรอกชื่อสินค้า..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Name2(TH)</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_name2" class="form-control" type="text" name="txt_goods_name2" placeholder="กรุณากรอกชื่อสินค้า..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Goods type</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label><input type="radio" id="rdo_goods_type" name="rdo_goods_type" value="1" checked>Merchandise</label>
+                        <label><input type="radio" id="rdo_goods_type" name="rdo_goods_type" value="2" >Product</label>
+                        <label><input type="radio" id="rdo_goods_type" name="rdo_goods_type" value="3" >Consumables</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Currency(ForSales)</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label><input type="radio" id="rdo_currency_for_sale" name="rdo_currency_for_sale" value="1" checked>THB</label>
+                        <label><input type="radio" id="rdo_currency_for_sale" name="rdo_currency_for_sale" value="2" >USD</label>
+                        <label><input type="radio" id="rdo_currency_for_sale" name="rdo_currency_for_sale" value="3" >JP</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Stocking Unit</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label><input type="radio" id="rdo_stocking_unit" name="rdo_stocking_unit" value="1" checked>Case</label>
+                        <label><input type="radio" id="rdo_stocking_unit" name="rdo_stocking_unit" value="2" >DB</label>
+                        <label><input type="radio" id="rdo_stocking_unit" name="rdo_stocking_unit" value="2" >PCS</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>PCS/DB</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_pcs_db" class="form-control" type="number" name="txt_goods_pcs_db" placeholder="กรุณากรอกแพ็คไซส์..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>PCS/CASE</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_pcs_case" class="form-control" type="number" name="txt_goods_pcs_case" placeholder="กรุณากรอกแพ็คไซส์..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>SalesUnitPrice(DB)</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_sales_price_db" class="form-control" type="text" name="txt_goods_sales_price_db" placeholder="กรุณากรอกราคาสินค้า..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>SalesUnitPrice(CASE)</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_sales_price_case" class="form-control" type="text" name="txt_goods_sales_price_case" placeholder="กรุณากรอกราคาสินค้า..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Product Category Goods</h3>
+                </div>
+                <div class="col-md-6">
+                    <select id="slt_product_category_goods" class="form-control" name="slt_product_category_goods">
                         <option value="0">กรุณาเลือก...</option>
-                </select>  
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Purchase A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Tax type code (sales)</h3>
+                </div>
+                <div class="col-md-6">
+                    <select id="slt_tax_sale_type" class="form-control" name="slt_tax_sale_type">
+                        <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                    <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div> 
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Tax type code (purchase)</h3>
+                </div>
+                <div class="col-md-6">
+                    <select id="slt_tax_purchase_type" class="form-control" name="slt_tax_purchase_type">
+                        <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Sales A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_sales_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Sales return A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_sales_return_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Purchase A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_purchase_ac" name="slt_sales_ac">               
+                        <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div> 
 
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Purchase return A/C code</h3>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Purchase return A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_purchase_return_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Incoming Cr temporary A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Incoming Cr temporary A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_incoming_cr_temporary_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Outgoing Dr temporary A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_outgoing_dr_temporary_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Outgoing Dr temporary A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Suspense A/C(operating ratio) A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_suspense_ac_operating_ratio_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Inventory A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_inventory_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Suspense A/C(operating ratio) A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Invertory depletion loss A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_inventory_depletion_loss_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Valuation loss A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_valuation_loss_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Inventory A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Valuation loss reserve A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_valuation_loss_reserve_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Cost A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_cost_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Invertory depletion loss A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Transfwe loss A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_transfer_loss_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Intransit inventory A/C code</h3>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control slt_sales_ac" id="slt_goods_intransit_inventory_ac" name="slt_sales_ac">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Valuation loss A/C code</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Remark</h3>
+                </div>
+                <div class="col-md-6">
+                    <input id="txt_goods_remark" class="form-control" type="text" name="txt_goods_remark">
+                </div>
             </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Valuation loss reserve A/C code</h3>
-            </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Cost A/C code</h3>
-            </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Transfwe loss A/C code</h3>
-            </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Intransit inventory A/C code</h3>
-            </div>
-            <div class="col-md-6">
-                <select class="form-control slt_sales_ac" name="slt_sales_ac">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Remark</h3>
-            </div>
-            <div class="col-md-6">
-                <input id="txt" class="form-control" type="text" name="txt">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-2">
-                <input class="btn btn-primary" id="sbt" type="Submit" name="btnsave" value="Save">
-                <input class="btn btn-primary" id="sbt" type="Submit" name="btnclr" value="Clear">
-            </div>
-        </div> 
+            
+            <div class="row">
+                <div class="col-md-2">
+                    <input class="btn btn-primary" id="sbt" type="Submit" name="btnsave" value="Save">
+                    <input class="btn btn-primary" id="sbt" type="Submit" name="btnclr" value="Clear">
+                </div>
+            </div> 
         </form>
     </div>
 
@@ -334,7 +334,7 @@
 
                         var i;
                         for (i = 0; i < data.list.length; i++) {
-                            $('#slt_status').append($('<option>', {
+                            $('#slt_goods_status').append($('<option>', {
                                 value: data.list[i].ajax_status_id,
                                 text: data.list[i].ajax_status_name1
                             }));
