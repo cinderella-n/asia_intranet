@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendor Form</title>
+    <title>Correspondent Form</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/correspondent_form.css">
@@ -35,7 +35,7 @@
                 <h3>Code</h3>
             </div>
             <div class="col-md-6">
-                <input id="txt_correspondent_code" class="form-control" type="text" name="txt_correspondent_code">
+                <input id="txt_correspondent_code" class="form-control"  type="text" name="txt_correspondent_code" >
             </div>
         </div>
         <div class="row">
@@ -288,7 +288,7 @@
             sendobj_status.get_status = "set";
             $.ajax({
                 method: "POST",
-                url: "j_status.php",
+                url: "a_status.php",
                 data: sendobj_status,
                 dataType: "json",
                 success: function(data) {
@@ -319,7 +319,7 @@
             sendobj_correspondent_type.get_correspondent_type = "set";
             $.ajax({
                 method: "POST",
-                url: "j_correspondent_type.php",
+                url: "a_correspondent_type.php",
                 data: sendobj_correspondent_type,
                 dataType: "json",
                 success: function(data) {
@@ -350,7 +350,7 @@
             sendobj_region.get_region = "set";
             $.ajax({
                 method: "POST",
-                url: "j_region.php",
+                url: "a_region.php",
                 data: sendobj_region,
                 dataType: "json",
                 success: function(data) {
@@ -381,7 +381,7 @@
             sendobj_ap_settlement_method.get_ap_settlement_method = "set";
             $.ajax({
                 method: "POST",
-                url: "j_ap_settlement_method.php",
+                url: "a_ap_settlement_method.php",
                 data: sendobj_ap_settlement_method,
                 dataType: "json",
                 success: function(data) {
@@ -412,7 +412,7 @@
             sendobj_ar_settlement_method.get_ar_settlement_method = "set";
             $.ajax({
                 method: "POST",
-                url: "j_ar_settlement_method.php",
+                url: "a_ar_settlement_method.php",
                 data: sendobj_ar_settlement_method,
                 dataType: "json",
                 success: function(data) {
@@ -443,7 +443,7 @@
             sendobj_ap_pattern.get_ap_pattern = "set";
             $.ajax({
                 method: "POST",
-                url: "j_ap_pattern.php",
+                url: "a_ap_pattern.php",
                 data: sendobj_ap_pattern,
                 dataType: "json",
                 success: function(data) {
@@ -474,7 +474,7 @@
             sendobj_ar_pattern.get_ar_pattern = "set";
             $.ajax({
                 method: "POST",
-                url: "j_ar_pattern.php",
+                url: "a_ar_pattern.php",
                 data: sendobj_ar_pattern,
                 dataType: "json",
                 success: function(data) {
@@ -505,7 +505,7 @@
             sendobj_tax_sale_type.get_tax_sale_type = "set";
             $.ajax({
                 method: "POST",
-                url: "j_tax_sale_type.php",
+                url: "a_tax_sale_type.php",
                 data: sendobj_tax_sale_type,
                 dataType: "json",
                 success: function(data) {
@@ -536,7 +536,7 @@
             sendobj_tax_purchase_type.get_tax_purchase_type = "set";
             $.ajax({
                 method: "POST",
-                url: "j_tax_purchase_type.php",
+                url: "a_tax_purchase_type.php",
                 data: sendobj_tax_purchase_type,
                 dataType: "json",
                 success: function(data) {
@@ -567,7 +567,7 @@
             sendobj_department.get_department = "set";
             $.ajax({
                 method: "POST",
-                url: "j_department.php",
+                url: "a_department.php",
                 data: sendobj_department,
                 dataType: "json",
                 success: function(data) {

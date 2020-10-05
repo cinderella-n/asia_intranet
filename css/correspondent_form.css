@@ -31,18 +31,18 @@ h1 {
 }
 
 input[type=text] {
-    width: 500px;
     color: #000;
+    font-size: 14px;
 }
 
 select {
-    width: 500px;
     color: #000;
+    font-size: 14px;
 }
 
 input[type=number] {
-    width: 150px;
     color: #000;
+    font-size: 14px;
 }
 
 input[type=submit] {
