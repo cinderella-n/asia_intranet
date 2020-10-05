@@ -1,20 +1,5 @@
 <?php
     include("connect.php");
-
-    $sql_status = "SELECT * FROM `status_tb`";
-    $result_status = $conn->query($sql_status);
-
-    $sql_correspondent_type = "SELECT * FROM `correspondent_type_tb`";
-    $result_correspondent_type = $conn->query($sql_correspondent_type);
-
-    $sql_tax_sale_type = "SELECT * FROM `tax_sale_type_tb`";
-    $result_tax_sale_type = $conn->query($sql_tax_sale_type);
-
-    $sql_tax_purchase_type = "SELECT * FROM `tax_purchase_type_tb`";
-    $result_tax_purchase_type = $conn->query($sql_tax_purchase_type);
-
-    $sql_department = "SELECT * FROM `department_tb`";
-    $result_department = $conn->query($sql_department);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +25,8 @@
                 <h3>Status</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_status" class="form-control" name="slt_status">
-                <?php while ($row_status = $result_status->fetch_assoc()) {
-                
-                ?>                
-                    <option value="<?=$row_status['status_id']?>" id="slt_status" name="slt_status"> <?=$row_status['status_name']?> </option>
-                <?php }  ?>
+                <select id="slt_status" class="form-control" name="slt_status">            
+                    <option value="0">กรุณาเลือก...</option>
                 </select>                
             </div>
         </div>
@@ -86,12 +67,8 @@
                 <h3>Correspondent type</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_correspondent_type" class="form-control" name="slt_correspondent_type">
-                    <?php while ($row_correspondent_type = $result_correspondent_type->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_correspondent_type['correspondent_type_id']?>" id="slt_correspondent_type" name="slt_correspondent_type"> <?=$row_correspondent_type['correspondent_type_name']?> </option>
-                    <?php }  ?>
+                <select id="slt_correspondent_type" class="form-control" name="slt_correspondent_type">           
+                        <option value="0" >กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -222,12 +199,8 @@
                 <h3>Tax Type(Sale) Code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_tax_sale_type" class="form-control" name="slt_tax_sale_type">
-                    <?php while ($row_tax_sale_type = $result_tax_sale_type->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_tax_sale_type['tax_sale_type_code']?>" id="slt_tax_sale_type" name="slt_tax_sale_type"> <?=$row_tax_sale_type['tax_sale_type_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_tax_sale_type" class="form-control" name="slt_tax_sale_type">               
+                        <option value="0">กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -236,12 +209,8 @@
                 <h3>Tax Type(Purchase) Code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_tax_purchase_type" class="form-control" name="slt_tax_purchase_type">
-                    <?php while ($row_tax_purchase_type = $result_tax_purchase_type->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_tax_purchase_type['tax_purchase_type_code']?>" id="slt_tax_purchase_type" name="slt_tax_purchase_type"> <?=$row_tax_purchase_type['tax_purchase_type_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_tax_purchase_type" class="form-control" name="slt_tax_purchase_type">              
+                        <option value="0">กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -250,12 +219,8 @@
                 <h3>Department Code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_department" class="form-control" name="slt_department">
-                    <?php while ($row_department = $result_department->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_department['department_code']?>" id="slt_department" name="slt_department"> <?=$row_department['department_code']?>-<?=$row_department['department_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_department" class="form-control" name="slt_department">             
+                        <option value="0" >กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -318,6 +283,69 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" >
         $(function() {
+
+            var sendobj_status = {};
+            sendobj_status.get_status = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_status.php",
+                data: sendobj_status,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_status').append($('<option>', {
+                                value: data.list[i].ajax_status_id,
+                                text: data.list[i].ajax_status_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
+            var sendobj_correspondent_type = {};
+            sendobj_correspondent_type.get_correspondent_type = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_correspondent_type.php",
+                data: sendobj_correspondent_type,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_correspondent_type').append($('<option>', {
+                                value: data.list[i].ajax_correspondent_type_id,
+                                text: data.list[i].ajax_correspondent_type_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
             var sendobj_region = {};
             sendobj_region.get_region = "set";
             $.ajax({
@@ -473,6 +501,37 @@
                 }
             });
 
+            var sendobj_tax_sale_type = {};
+            sendobj_tax_sale_type.get_tax_sale_type = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_tax_sale_type.php",
+                data: sendobj_tax_sale_type,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_tax_sale_type').append($('<option>', {
+                                value: data.list[i].ajax_tax_sale_type_code,
+                                text: data.list[i].ajax_tax_sale_type_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
             var sendobj_tax_purchase_type = {};
             sendobj_tax_purchase_type.get_tax_purchase_type = "set";
             $.ajax({
@@ -504,6 +563,37 @@
                 }
             });
             
+            var sendobj_department = {};
+            sendobj_department.get_department = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_department.php",
+                data: sendobj_department,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_department').append($('<option>', {
+                                value: data.list[i].ajax_department_code,
+                                text: data.list[i].ajax_department_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
         });
     </script>
 </body>
