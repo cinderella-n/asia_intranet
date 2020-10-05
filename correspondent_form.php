@@ -7,9 +7,6 @@
     $sql_correspondent_type = "SELECT * FROM `correspondent_type_tb`";
     $result_correspondent_type = $conn->query($sql_correspondent_type);
 
-    $sql_region = "SELECT * FROM `region_tb`";
-    $result_region = $conn->query($sql_region);
-
     $sql_tax_sale_type = "SELECT * FROM `tax_sale_type_tb`";
     $result_tax_sale_type = $conn->query($sql_tax_sale_type);
 
@@ -159,12 +156,8 @@
                 <h3>Region code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_region" class="form-control" name="slt_region">
-                    <?php while ($row_region = $result_region->fetch_assoc()) {
-                    
-                    ?>                
-                        <option value="<?=$row_region['region_code']?>" id="slt_region" name="slt_region"> <?=$row_region['region_name1']?> </option>
-                    <?php }  ?>
+                <select id="slt_region" class="form-control" name="slt_region">            
+                        <option value="0">กรุณาเลือก...</option>
                 </select>  
             </div>
         </div>
@@ -325,6 +318,37 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" >
         $(function() {
+            var sendobj_region = {};
+            sendobj_region.get_region = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_region.php",
+                data: sendobj_region,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_region').append($('<option>', {
+                                value: data.list[i].ajax_region_code,
+                                text: data.list[i].ajax_region_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
             var sendobj_ap_settlement_method = {};
             sendobj_ap_settlement_method.get_ap_settlement_method = "set";
             $.ajax({
@@ -437,6 +461,37 @@
                             $('#slt_ar_pattern').append($('<option>', {
                                 value: data.list[i].ajax_ar_pattern_code,
                                 text: data.list[i].ajax_ar_pattern_name1
+                            }));
+                        }
+
+                    } else {
+                        alert("Ajax Error");
+                    }
+                },
+                error: function() {
+                    alert("Has Error !!");
+                }
+            });
+
+            var sendobj_tax_purchase_type = {};
+            sendobj_tax_purchase_type.get_tax_purchase_type = "set";
+            $.ajax({
+                method: "POST",
+                url: "j_tax_purchase_type.php",
+                data: sendobj_tax_purchase_type,
+                dataType: "json",
+                success: function(data) {
+                    //alert("OK !");
+
+                    console.log(data);
+
+                    if (data.issuccess) {
+
+                        var i;
+                        for (i = 0; i < data.list.length; i++) {
+                            $('#slt_tax_purchase_type').append($('<option>', {
+                                value: data.list[i].ajax_tax_purchase_type_code,
+                                text: data.list[i].ajax_tax_purchase_type_name1
                             }));
                         }
 
