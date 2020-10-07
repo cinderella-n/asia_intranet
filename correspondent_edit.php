@@ -76,9 +76,12 @@
                 <h3>Status</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_status" class="form-control" name="slt_status" value="<?=$row['correspondent_status']?>">            
-                    <option value="0">กรุณาเลือก...</option>
-                </select>                
+                <div class="col-md-6"><?=$row['correspondent_status']?></div>
+                <div class="col-md-6">
+                    <select id="slt_status" class="form-control" name="slt_status">            
+                        <option value="0">กรุณาเลือก...</option>
+                    </select>                
+                </div>
             </div>
         </div>
         <div class="row">
@@ -118,9 +121,12 @@
                 <h3>Correspondent type</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_correspondent_type" class="form-control" name="slt_correspondent_type" value="<?=$row['correspondent_type']?>">           
-                        <option value="0" >กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_type']?></div>
+                <div class="col-md-6">
+                    <select id="slt_correspondent_type" class="form-control" name="slt_correspondent_type">           
+                            <option value="0" >กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -184,9 +190,12 @@
                 <h3>Region code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_region" class="form-control" name="slt_region" value="<?=$row['correspondent_region_code']?>">            
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_region_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_region" class="form-control" name="slt_region">            
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -194,9 +203,12 @@
                 <h3>AR settlement method code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ar_settlement_method" name="slt_ar_settlement_method" class="form-control" value="<?=$row['correspondent_ar_settlement_method_code']?>">              
-                        <option value="0" >กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_ar_settlement_method_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_ar_settlement_method" name="slt_ar_settlement_method" class="form-control">              
+                            <option value="0" >กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -204,9 +216,12 @@
                 <h3>AP settlement method code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ap_settlement_method" class="form-control" name="slt_ap_settlement_method" value="<?=$row['correspondent_ap_settlement_method_code']?>">             
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_ap_settlement_method_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_ap_settlement_method" class="form-control" name="slt_ap_settlement_method">             
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -230,9 +245,12 @@
                 <h3>AR pattern code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ar_pattern" class="form-control" name="slt_ar_pattern" value="<?=$row['correspondent_ar_pattern_code']?>">
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_ar_pattern_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_ar_pattern" class="form-control" name="slt_ar_pattern">
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -240,9 +258,12 @@
                 <h3>AP pattern code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_ap_pattern" class="form-control" name="slt_ap_pattern" value="<?=$row['correspondent_ap_pattern_code']?>">              
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_ap_pattern_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_ap_pattern" class="form-control" name="slt_ap_pattern">              
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -250,9 +271,12 @@
                 <h3>Tax Type(Sale) Code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_tax_sale_type" class="form-control" name="slt_tax_sale_type" value="<?=$row['correspondent_tax_type_sale_code']?>">               
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_tax_type_sale_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_tax_sale_type" class="form-control" name="slt_tax_sale_type">               
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -260,9 +284,12 @@
                 <h3>Tax Type(Purchase) Code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_tax_purchase_type" class="form-control" name="slt_tax_purchase_type" value="<?=$row['correspondent_tax_type_purchase_code']?>">              
-                        <option value="0">กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_tax_type_purchase_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_tax_purchase_type" class="form-control" name="slt_tax_purchase_type">              
+                            <option value="0">กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
@@ -270,9 +297,12 @@
                 <h3>Department Code</h3>
             </div>
             <div class="col-md-6">
-                <select id="slt_department" class="form-control" name="slt_department" value="<?=$row['correspondent_department_code']?>">             
-                        <option value="0" >กรุณาเลือก...</option>
-                </select>  
+                <div class="col-md-6"><?=$row['correspondent_department_code']?></div>
+                <div class="col-md-6">
+                    <select id="slt_department" class="form-control" name="slt_department">             
+                            <option value="0" >กรุณาเลือก...</option>
+                    </select>  
+                </div>
             </div>
         </div>
         <div class="row">
