@@ -32,7 +32,36 @@
     $str_goods_remark = $_POST['txt_goods_remark'];
 
 
-    $str_sql = "INSERT INTO `goods_tb`(`goods_status`, `goods_code`, `goods_name1`, `goods_name2`, `goods_search`, `goods_type`, `goods_currency`, `goods_stocking_unit`, `goods_pcs_db`, `goods_pcs_case`, `goods_sales_unit_price_db`, `goods_sales_unit_price_case`, `goods_product_category`, `goods_tax_type_code_sales`, `goods_tax_type_code_purchase`, `goods_sales_ac`, `goods_sales_return_ac`, `goods_purchase_ac`, `goods_purchase_return_ac`, `goods_incoming_cr_temporary_ac`, `goods_outgoing_dr_temporary_ac`, `goods_suspense_ac_operating_ratio_ac`, `goods_inventory_ac`, `goods_inventory_depletion_loss_ac`, `goods_valuation_loss_ac`, `goods_valuation_loss_reserve_ac`, `goods_cost_ac`, `goods_transfer_loss_ac`, `goods_intransit_inventory_ac`, `goods_what_to_do`, `goods_remark`) VALUES (";
+    $str_sql = "INSERT INTO `goods_tb`(`goods_status`,
+     `goods_code`,
+      `goods_name1`,
+       `goods_name2`,
+         `goods_type`,
+          `goods_currency`,
+           `goods_stocking_unit`,
+            `goods_pcs_db`,
+             `goods_pcs_case`,
+              `goods_sales_unit_price_db`,
+               `goods_sales_unit_price_case`,
+                `goods_product_category`,
+                 `goods_tax_type_code_sales`,
+                  `goods_tax_type_code_purchase`,
+                   `goods_sales_ac`,
+                    `goods_sales_return_ac`,
+                     `goods_purchase_ac`,
+                      `goods_purchase_return_ac`,
+                       `goods_incoming_cr_temporary_ac`,
+                        `goods_outgoing_dr_temporary_ac`,
+                         `goods_suspense_ac_operating_ratio_ac`,
+                          `goods_inventory_ac`,
+                           `goods_inventory_depletion_loss_ac`,
+                            `goods_valuation_loss_ac`,
+                             `goods_valuation_loss_reserve_ac`,
+                              `goods_cost_ac`,
+                               `goods_transfer_loss_ac`,
+                                `goods_intransit_inventory_ac`,
+                                 `goods_what_to_do`,
+                                  `goods_remark`) VALUES (";
     $str_sql .= "'" .  $str_goods_status . "',";
     $str_sql .= "'" .  $str_goods_code . "',";
     $str_sql .= "'" .  $str_goods_name1 . "',";

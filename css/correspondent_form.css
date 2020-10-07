@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .container-fluid {
@@ -44,4 +45,13 @@ input[type=number] {
 
 input[type=submit] {
     margin: 15px;
+}
+
+.menu {
+    background-color: #fff;
+    color: #f00;
+}
+
+.btn-info {
+    float: left;
 }

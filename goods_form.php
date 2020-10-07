@@ -1,5 +1,5 @@
 <?php
-    include("connect.php");
+    include("connect.php")
 
 ?>
 <!DOCTYPE html>
@@ -11,13 +11,48 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/correspondent_form.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container-fluid">
-    <div class="row">
-            <div id="h1" class="col-md-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.JPG" width="65px" height="36px" class="d-inline-block align-top" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Goods<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Correspondent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sale Price</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        AC Code
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">               
+        <div class="row">
+            <div class="col-md-12" style="background-color: #fff; color:#f00; text-alige:left; font-size:36px;">
+                <h1>LOTTE</h1>
+            </div>            
+        </div> 
+        <div class="row">
+            <div id="h1" class="col-md-12">
                 <h1>Goods Form</h1>
             </div>
         </div>
