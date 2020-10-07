@@ -92,7 +92,7 @@
                     <div class="col-md-3"><?=$row["correspondent_address2_th"]?></div>
                     <div class="col-md-12 button">
                         <form action="r_correspondent_manage.php" method="post">
-                            <input type="hidden" name="hd_correspondent_id" id="hd_correspondent_id" value="<?=$row["correspondent_id"]?>">
+                            <input type="hidden" name="hdcorrespondent_id" id="hdcorrespondent_id" value="<?=$row["correspondent_id"]?>">
                             <input class="btn btn-primary" type="submit" id="btn_edit" name="btn_edit" value="Edit">
                             <input class="btn btn-danger" type="submit" id="btn_delete" name="btn_delete" value="Delete">                            
                         </form>
