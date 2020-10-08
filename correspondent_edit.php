@@ -1,6 +1,5 @@
 <?php
-    include("connect.php");
-    require("connect.php");
+    require_once("connect.php");
 
     $str_id = "";
 
