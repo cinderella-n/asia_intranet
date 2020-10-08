@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if (isset($_POST["btn_add"])) {
         header("location:ap_pattern_form.php");
     }elseif ($_POST["btn_edit"]) {

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require("connect.php");
 
     $str_correspondent_status = $_POST['slt_status'];
