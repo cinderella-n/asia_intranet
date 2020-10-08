@@ -1,5 +1,4 @@
 <?php
-    include("connect.php");
     require("connect.php");
 
     $str_ap_pattern_code = $_POST['txt_ap_pattern_code'];

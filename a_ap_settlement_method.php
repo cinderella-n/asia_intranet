@@ -2,7 +2,7 @@
 
     $arr_result = array();
 
-    include("connect.php");
+    require("connect.php");
 
     $arr_result['issuccess'] = false;
 

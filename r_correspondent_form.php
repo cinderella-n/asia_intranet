@@ -1,5 +1,5 @@
 <?php
-    include("connect.php");
+    require("connect.php");
 
     $str_correspondent_status = $_POST['slt_status'];
     $str_correspondent_code = $_POST['txt_correspondent_code'];
@@ -58,7 +58,7 @@
                              `correspondent_register_company`,
                               `correspondent_credit_limit`,
                                `correspondent_branch_no`) VALUES (";
-	$str_sql .= "'" .  $str_correspondent_status . "',";
+	  $str_sql .= "'" .  $str_correspondent_status . "',";
     $str_sql .= "'" .  $str_correspondent_code . "',";
     $str_sql .= "'" .  $str_correspondent_delivery . "',";
     $str_sql .= "'" .  $str_correspondent_name1 . "',";

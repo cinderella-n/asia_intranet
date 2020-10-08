@@ -1,5 +1,5 @@
 <?php
-    include("connect.php");
+    require("connect.php");
 
     $str_goods_status = $_POST['slt_goods_status'];
     $str_goods_code = $_POST['txt_goods_code'];
